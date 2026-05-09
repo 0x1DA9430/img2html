@@ -4,6 +4,14 @@ export interface Translations {
             name: string;
             desc: string;
         };
+        useCustomAttributes: {
+            name: string;
+            desc: string;
+        };
+        customAttributes: {
+            name: string;
+            desc: string;
+        };
         useCustomPath: {
             name: string;
             desc: string;
@@ -50,6 +58,15 @@ const zh: Translations = {
         showNotice: {
             name: '显示通知',
             desc: '粘贴图片时显示通知'
+        },
+        // Translation was provided by AI (not sure if correct)
+        useCustomAttributes: {
+            name: '使用自定义 HTML 属性',
+            desc: '启用后将使用下方指定的自定义 HTML 属性（如自定义 class），注意这会移除图片宽度设置'
+        },
+        customAttributes: {
+            name: '自定义属性',
+            desc: '用于最终 HTML 输出的自定义属性字符串'
         }
     },
     statusBar: {
@@ -81,6 +98,14 @@ const en: Translations = {
         showNotice: {
             name: 'Show notification',
             desc: 'Show notification when pasting images'
+        },
+        useCustomAttributes: {
+            name: 'Use custom HTML attributes',
+            desc: 'When enabled, uses custom HTML attributes specified below (e.g. a custom class) and ignores the image width and alt tag setting'
+        },
+        customAttributes: {
+            name: 'Custom attributes',
+            desc: 'String of custom attributes to use for the final HTML output'
         }
     },
     statusBar: {
