@@ -26,8 +26,8 @@ export function createHtmlImgTag(
 	customPath: string,
 	imageWidth: string,
 	includeAlt: boolean,
-    useCustomAttributes: boolean,
-    customAttributes: string
+	useCustomAttributes: boolean,
+	customAttributes: string
 ): string {
 	let src = '';
 	
@@ -48,12 +48,11 @@ export function createHtmlImgTag(
 	}
 	
 	// Build HTML tag
-	if(useCustomAttributes) {
-        // Remove trailing and leading whitespace and prevent early closure
-        const attrs = customAttributes.trim().replace(/>/g, '');
-        const space = attrs ? ' ': '';
-        return `<img src="${src}"${space}${attrs}>`;
-    } else if (includeAlt) {
+	if (useCustomAttributes) {
+		const attrs = customAttributes.trim().replace(/>/g, '');
+		const space = attrs ? ' ' : '';
+		return `<img src="${src}"${space}${attrs}>`;
+	} else if (includeAlt) {
 		return `<img src="${src}" width="${imageWidth}" alt="${fileName}">`;
 	} else {
 		return `<img src="${src}" width="${imageWidth}">`;

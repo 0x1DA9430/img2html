@@ -59,10 +59,9 @@ const zh: Translations = {
             name: '显示通知',
             desc: '粘贴图片时显示通知'
         },
-        // Translation was provided by AI (not sure if correct)
         useCustomAttributes: {
             name: '使用自定义 HTML 属性',
-            desc: '启用后将使用下方指定的自定义 HTML 属性（如自定义 class），注意这会移除图片宽度设置'
+            desc: '启用后将使用下方指定的自定义 HTML 属性（如自定义 class），注意这会忽略图片宽度和 alt 属性设置'
         },
         customAttributes: {
             name: '自定义属性',
