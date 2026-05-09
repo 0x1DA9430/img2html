@@ -8,6 +8,8 @@ interface Img2HtmlPlugin extends Plugin {
 		imagePath: string;
 		useCustomPath: boolean;
 		includeAlt: boolean;
+        useCustomAttributes: boolean;
+        customAttributes: string;
 	};
 	i18n: Translations;
 	saveSettings(): Promise<void>;
@@ -69,6 +71,33 @@ export class Img2HtmlSettingTab extends PluginSettingTab {
 					await this.plugin.saveSettings();
 				}));
 
+		new Setting(containerEl)
+			.setName(i18n.settings.useCustomAttributes.name)
+			.setDesc(i18n.settings.useCustomAttributes.desc)
+			.addToggle(toggle => toggle
+				.setValue(this.plugin.settings.useCustomAttributes)
+				.onChange(async (value) => {
+					this.plugin.settings.useCustomAttributes = value;
+					await this.plugin.saveSettings();
+				}));
+
+		new Setting(containerEl)
+            .setName(i18n.settings.customAttributes.name)
+            .setDesc(i18n.settings.customAttributes.desc)
+            .addTextArea(text => {
+                text.setPlaceholder('class="custom-style"')
+                    .setValue(this.plugin.settings.customAttributes)
+                    .onChange(async (value) => {
+                        this.plugin.settings.customAttributes = value;
+                        await this.plugin.saveSettings();
+                    });
+
+                // Styling settings to make the text area bigger
+                text.inputEl.style.resize = 'none';
+                text.inputEl.style.height = '100px';
+                text.inputEl.style.width = '100%';
+            });
+            
 		new Setting(containerEl)
 			.setName(i18n.settings.showNotice.name)
 			.setDesc(i18n.settings.showNotice.desc)

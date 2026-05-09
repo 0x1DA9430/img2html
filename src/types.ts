@@ -12,6 +12,10 @@ export interface Img2HtmlSettings {
 	useCustomPath: boolean;
 	// Whether to include alt attribute
 	includeAlt: boolean;
+    // Wheteher to use custom HTML attribues
+    useCustomAttributes: boolean;
+    // String of custom HTML attribues
+    customAttributes: string;
 }
 
 /**
@@ -22,5 +26,7 @@ export const DEFAULT_SETTINGS: Img2HtmlSettings = {
 	showNotice: true,
 	imagePath: './assets',
 	useCustomPath: false,
-	includeAlt: false
+	includeAlt: false,
+    useCustomAttributes: false,
+    customAttributes: ''
 }; 

@@ -48,12 +48,22 @@ By default, the plugin generates HTML tags without the alt attribute to keep the
 <img src="image_1234567890.jpg" width="auto" alt="image_1234567890.jpg">
 ```
 
+### About Custom Attributes
+
+You can enable "Use custom attributes" to disable both the image width and alt tag setting in favor of a fully custom list of attributes, such as a custom CSS class or variables therein. Using this function, you can generate tags like:
+
+```html
+<img src="./assets/image_1778330017341.png" class="image-class" style="--img-width: 40vw;">
+```
+
 ## Settings
 
 - **Image Width**: Set the image width, can be pixels (e.g., 500px), percentage (e.g., 100%), or auto
 - **Use Custom Image Path**: When enabled, images will be saved to the specified path instead of the current file's directory
 - **Custom Image Path**: Set the image save path, can be relative (e.g., ./assets) or absolute (e.g., assets)
 - **Include Alt Attribute**: When enabled, HTML image tags will include the alt attribute for better accessibility and SEO
+- **Use Custom Attributes**: When enabled, uses custom HTML attributes specified below (e.g. a custom class) and ignores the image width and alt tag setting
+- **Custom Attributes**: String of custom attributes to use for the final HTML output
 - **Show Notifications**: Choose whether to show notifications when pasting images
 
 ## Installation
